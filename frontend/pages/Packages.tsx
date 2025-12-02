@@ -170,7 +170,7 @@ const Packages: React.FC = () => {
         </div>
 
         {/* 3. Pricing Cards - Improved Layout and Spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start mb-16">
           {displayPackages.map((pkg, idx) => {
             const isGold = pkg.color === 'gold';
             const isNavy = pkg.color === 'navy';
@@ -237,6 +237,36 @@ const Packages: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* 3.5 Client Testimonials (Social Proof) */}
+        <div className="mb-20 animate-on-scroll">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-gray-900">{language === 'ar' ? 'ماذا يقول عملاؤنا؟' : 'What our clients say'}</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: language === 'ar' ? 'محمد العتيبي' : 'Mohammed Al-Otaibi', role: language === 'ar' ? 'رئيس تنفيذي' : 'CEO', text: language === 'ar' ? 'الباقة الذهبية وفرت علينا عناء متابعة المعاملات الحكومية. خدمة ممتازة!' : 'The Gold Package saved us the hassle of following up on government transactions. Excellent service!', stars: 5 },
+              { name: language === 'ar' ? 'سارة القحطاني' : 'Sarah Al-Qahtani', role: language === 'ar' ? 'رائدة أعمال' : 'Entrepreneur', text: language === 'ar' ? 'بدأت مشروعي مع باقة التأسيس، كانت الإجراءات سلسة وسريعة جداً.' : 'I started my project with the Foundation Package, the procedures were very smooth and fast.', stars: 5 },
+              { name: language === 'ar' ? 'شركة الأفق' : 'Horizon Co.', role: language === 'ar' ? 'قطاع التقنية' : 'Tech Sector', text: language === 'ar' ? 'دعم فني احترافي واستجابة سريعة في أي وقت. نوصي بهم بشدة.' : 'Professional technical support and fast response at any time. Highly recommended.', stars: 5 }
+            ].map((review, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div className="flex gap-1 mb-4 text-yellow-400">
+                  {[...Array(review.stars)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">"{review.text}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-primary font-bold">
+                    {review.name[0]}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm text-gray-900">{review.name}</h4>
+                    <span className="text-xs text-gray-500">{review.role}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* 4. Comparison Table Section */}
