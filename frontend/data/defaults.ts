@@ -89,9 +89,9 @@ export const DEFAULT_MESSAGES: Message[] = [
 ];
 
 export const DEFAULT_SETTINGS: SiteSettings = {
-  phone: '+966 920 022 444',
+  phone: '+90 552 732 40 29',
   email: 'info@etmaam.com.sa',
-  whatsapp: '966554799222',
+  whatsapp: '905527324029',
   address: 'المملكة العربية السعودية، الرياض، طريق الملك فهد، برج العليا',
   heroTitle: 'شريكك الأول لتأسيس الأعمال',
   heroSubtitle: 'نقدم حلولاً شاملة تلبي احتياجات عملك، بدءاً من تأسيس الشركات وإدارة الرواتب وصولاً إلى الاستشارات المالية.',
